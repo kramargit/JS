@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <title>Домашняя работа №2</title>
+    <script>
+
+        // 1 задание
+        /* var a = 1, b = 1, c, d;
+         c = ++a; alert(c);           // 2 ответ: потому что в "с" произошел префиксный инкримент "a", а потом вывод
+         d = b++; alert(d);           // 1 ответ: потому что в "d" произошел вывод "b", а потом постфиксный инкримент
+         c = (2 + ++a); alert(c);      // 5 ответ: потому что в "c": 1) префиксный инкримент, результат которого - 3 2) + 2, в резульате - 5, а потом вывод через alert
+         d = (2 + b++); alert(d);      // 4 ответ: потому что в "d": 1) (2+b) => 2 + 2, в резульате - 4, а потом вывод через alert 2) дальше постфиксный инкримент "b"
+         alert(a);                    // 3 ответ: потому что в "a" после всех операций находится число 3
+         alert(b);                    // 3 ответ: потому что в "b" после всех операций находится число 3
+         */
+
+        // 2 задание
+        /*
+        var a = 2;
+        var x = 1 + (a *= 2);  // ответ: 5
+        */
+
+        // 3 задание
+        /*
+        let a = +prompt('Введите число в переменную "a"');
+        let b = +prompt('Введите число в переменную "b"');
+
+        if (a >= 0 && b >= 0) {
+            console.log(a - b);
+        } else if (a < 0 && b < 0) {
+            console.log(a * b);
+        } else {
+            console.log(a + b);
+        }
+        */
+
+        // 4 задание
+
+        /*
+        let a = +prompt('Введите число от 0 до 15');
+
+        function getNumbers(a) {
+            if (a == 16) {
+                return;
+            }
+            console.log(a);
+            return getNumbers(a + 1);
+        }
+
+        if (a >= 16 || a < 0) {
+            console.log('Вы ввели некорректное значение');
+        } else {
+            getNumbers(a);
+        }
+        */
+
+        // 5 задание
+
+        /*
+        function getSumm(a, b) {
+            return a + b;
+        }
+
+        function getRaznost(a, b) {
+            return a - b;
+        }
+
+        function getDel(a, b) {
+            return a / b;
+        }
+
+        function getMnoj(a, b) {
+            return a * b;
+        }
+
+        let a = +prompt('Введите первый параметр');
+        let b = +prompt('Введите второй параметр');
+
+        console.log(getSumm(a, b));
+        console.log(getRaznost(a, b));
+        console.log(getDel(a, b));
+        console.log(getMnoj(a, b));
+        */
+
+        // Задание 6
+
+        /*
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case '+':
+                    return arg1 + arg2;
+                case '-':
+                    return arg1 - arg2;
+                case '*':
+                    return arg1 * arg2;
+                case '/':
+                    return arg1 / arg2;
+            }
+        }
+
+        let a = +prompt('Введите первый аргумент');
+        let b = +prompt('Введите второй аргумент');
+        let c = prompt('Введите операцию');
+
+        console.log(mathOperation(a, b, c));
+        */
+
+        // Задание 7
+
+        // null означает, что переменная содержит ссылку на пространство в памяти, которое содержит пустой объект.
+        // 0 - это числовой тип данных со значением 0.
+
+        // Задание 8
+
+        /*
+        function power(val, pow) {
+            if (pow == 1) {
+                return val;
+            } else {
+                return val * power(val, pow - 1);
+            }
+        }
+
+        let a = +prompt('Введите основание степени');
+        let b = +prompt('Введите степень');
+
+        alert(power(a, b));
+        */
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
