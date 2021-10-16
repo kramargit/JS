@@ -1,0 +1,26 @@
+td {
+    width: 70px;
+    height: 70px;
+    text-align: center;
+}
+
+.rotateTd {
+    transform: rotate(180deg);
+}
+
+.top {
+    border-top: 1px solid black; 
+}
+
+.right {
+    border-right: 1px solid black;
+}
+
+.bottom {
+    border-top: 1px solid black;
+}
+
+.left {
+    border-right: 1px solid black;
+}
+
