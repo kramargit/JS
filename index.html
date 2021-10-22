@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+	<title>Домашняя работа №5</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+	<div class="chess-container"></div>
+
+	<script>
+		let table = document.createElement('table');
+		table.setAttribute('cellspacing', '0')
+		let chessContainer = document.querySelector('div');
+		chessContainer.append(table);
+
+		let masColumn = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']; //массив с именами столбцов
+		let masRows = ['1', '2', '3', '4', '5', '6', '7', '8']; //массив с именами строк
+
+		function createCheesDesk() {
+			for (let i = 0; i <= 9; i++) {
+				let tr = document.createElement('tr');
+
+
+				/* создается структура, которая заполняет доску строками */
+				if (i > 0) {
+					let sp2 = document.querySelector('tr');
+					table.insertBefore(tr, sp2);
+				} else {
+					table.append(tr);
+				}
+
+				for (let j = 0; j <= 9; j++) {
+					let td = document.createElement('td');
+					tr.append(td);
+
+					/* Создание 0 и 9 строки */
+					if (i == 0 || i == 9) {
+						if (j == 0 || j == 9) {
+							continue;
+						} else {
+							td.innerText = masColumn[j - 1];
+						}
+
+					}
+
+					/* Создание 0 и 9 столбца */
+					if ((i > 0 && i < 9) && (j == 0 || j == 9)) {
+						td.innerText = masRows[i - 1];
+					}
+
+					/* Закрашивание ячеек */
+					if ((i > 0 && i < 9) && (j > 0 && j < 9)) {
+						if ((i % 2 == 0) && (j % 2 != 0)) {
+							td.style.backgroundColor = 'black';
+							td.style.color = 'white';
+						}
+						if ((i % 2 != 0) && (j % 2 == 0)) {
+							td.style.backgroundColor = 'black';
+							td.style.color = 'white';
+						}
+					}
+
+					/* переворот на 180 градусов определенных ячеек*/
+					if (i == 9 || j == 9) {
+						td.className = 'rotateTd';
+					}
+
+					/* Создание границ у шахматной доски */
+					if ((i == 9) && (j > 0 && j < 9)) {
+						td.classList.add('top');
+					} else if ((i == 0) && (j > 0 && j < 9)) {
+						td.classList.add('bottom');
+					} else if ((j == 0) && (i > 0 && i < 9)) {
+						td.classList.add('left');
+					} else if ((j == 9) && (i > 0 && i < 9)) {
+						td.classList.add('right');
+					}
+
+
+
+
+
+					/* Заполнение доски черными шахматными фигурами*/
+					if (i == 7 && (j != 0 && j != 9)) {
+						td.innerHTML = '&#9823;';
+					}
+					if (i == 8 && (j == 1 || j == 8)) {
+						td.innerHTML = '&#9820;';
+					}
+					if (i == 8 && (j == 2 || j == 7)) {
+						td.innerHTML = '&#9822;';
+					}
+					if (i == 8 && (j == 3 || j == 6)) {
+						td.innerHTML = '&#9821;';
+					}
+					if (i == 8 && j == 4) {
+						td.innerHTML = '&#9818;';
+					}
+					if (i == 8 && j == 5) {
+						td.innerHTML = '&#9819;';
+					}
+
+					/* Заполнение доски белыми шахматными фигурами*/
+					if (i == 2 && (j != 0 && j != 9)) {
+						td.innerHTML = '&#9817;';
+					}
+					if (i == 1 && (j == 1 || j == 8)) {
+						td.innerHTML = '&#9814;';
+					}
+					if (i == 1 && (j == 2 || j == 7)) {
+						td.innerHTML = '&#9816;';
+					}
+					if (i == 1 && (j == 3 || j == 6)) {
+						td.innerHTML = '&#9815;';
+					}
+					if (i == 1 && j == 4) {
+						td.innerHTML = '&#9812;';
+					}
+					if (i == 1 && j == 5) {
+						td.innerHTML = '&#9813;';
+					}
+				}
+			}
+		}
+
+		createCheesDesk();
+	</script>
+</body>
+
+</html>
