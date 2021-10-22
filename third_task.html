@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <title>Домашняя работа №4</title>
+    <script>
+
+        // 3 задание
+        var firstRound = {
+            question: 'Вы слушаете монгенштерна?',
+            answer1: '1. Нет',
+            answer2: '2. Нет',
+            answer3: '3. Нет',
+            answer4: '4. Нет',
+            rightAnswerNumber: '4',
+            rightAnswerFull: '4. Нет',
+        };
+        var secondRound = {
+            question: 'Где живут пнигвины?',
+            answer1: '1. Арктика',
+            answer2: '2. Антарктида',
+            answer3: '3. Евразия',
+            answer4: '4. Америка',
+            rightAnswerNumber: '2',
+            rightAnswerFull: '2. Антарктида',
+        };
+        var thirdRound = {
+            question: 'Роль в хоккее, когда человек играет и в защите и в нападении',
+            answer1: '1. Правый нападающий',
+            answer2: '2. Защитник',
+            answer3: '3. Левый нападающий',
+            answer4: '4. Центральный нападающий',
+            rightAnswerNumber: '4',
+            rightAnswerFull: '4. Центральный нападающий',
+        };
+        var forthRound = {
+            question: '2+2*2?',
+            answer1: '1. 8',
+            answer2: '2. 2',
+            answer3: '3. 6',
+            answer4: '4. 10',
+            rightAnswerNumber: '3',
+            rightAnswerFull: '3. 6',
+        };
+
+        var rounds = [firstRound, secondRound, thirdRound, forthRound];
+
+        function questMillion(object) {
+            var countCorrect = 0;
+            for (var i = 0; i < 4; i++) {
+                var userAnswer = +prompt(object[i].question + '\n' + object[i].answer1 + '\n' + object[i].answer2 + '\n' + object[i].answer3 + '\n' + object[i].answer4);
+                while (userAnswer == '' || userAnswer == null || isNaN(userAnswer)) {
+                    userAnswer = +prompt(object[i].question + '\n' + object[i].answer1 + '\n' + object[i].answer2 + '\n' + object[i].answer3 + '\n' + object[i].answer4);
+                }
+                if (userAnswer == object[i].rightAnswerNumber) {
+                    alert('Вы ответили верно!\n' + object[i].rightAnswerFull + '.');
+                    countCorrect++;
+                } else {
+                    alert('Вы дали неверный ответ!\nПравильный ответ: ' + object[i].rightAnswerFull + ' .');
+                }
+            }
+            document.write('Вы дали верные ответы на следующее количество вопросов: ' + countCorrect + '.');
+        }
+        questMillion(rounds);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
