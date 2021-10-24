@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+}
+
+.container {
+    width: 40%;
+    height: 380px;
+    display: block;
+    margin: 100px auto;
+    position: relative;
+}
+
+.mySlide {
+    height: inherit;
+}
+
+.mySlide img {
+    width: 100%;
+}
+
+.btn {
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    font-size: 250%;
+    height: 57px;
+}
+
+.next {
+    right: 0;
+    transition: all 0.5s;
+}
+
+.prev {
+    transition: all 0.5s;
+}
+
+.prev:hover {    
+    color: #fff;
+    background-color: #000;
+    border-radius: 0 5px 5px 0;
+}
+
+.next:hover {
+    color: #fff;
+    background-color: #000;
+    border-radius: 5px 0 0 5px;
+}
+
+.anim {
+    animation-name: anim;
+    animation-duration: 1s;
+}
+
+@keyframes anim {
+    from{
+        opacity: 0.4;
+    }
+
+    to{
+        opacity: 1;
+    }
+}

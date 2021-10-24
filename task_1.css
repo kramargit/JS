@@ -1,0 +1,21 @@
+.nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.small-image {
+    width: 20%;
+    cursor: pointer;
+}
+
+.image {
+    width: 100%;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.big-image {
+    display: block;
+    width: 53%;
+    margin: 0 auto;
+}
